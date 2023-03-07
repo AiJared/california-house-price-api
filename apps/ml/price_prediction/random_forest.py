@@ -7,7 +7,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 class RandomForestRegressor:
     def __init__(self):
-        path_to_artifacts = os.path.join(BASE_DIR)
+        path_to_artifacts = "C:/Users/ojare/AIML/house-price-prediction/backend/carlifornia/artifacts/"
 
         self.values_fill_missing = joblib.load(path_to_artifacts + "train_mode.joblib")
         self.encoders = joblib.load(path_to_artifacts + "encoders.joblib")
