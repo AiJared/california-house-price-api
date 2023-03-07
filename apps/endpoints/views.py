@@ -18,7 +18,7 @@ from apps.endpoints.serializers import MLModelStatusSerializer
 from apps.endpoints.models import MLRequest
 from apps.endpoints.serializers import MLRequestSerializer
 
-class EnpointViewSet(
+class EndpointViewSet(
     mixins.RetrieveModelMixin, mixins.ListModelMixin,
     viewsets.GenericViewSet):
     serializer_class = EnpointSerializer
