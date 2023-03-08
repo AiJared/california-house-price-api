@@ -12,7 +12,7 @@ class MLRegistry:
             model_code
     ):
         # get endpoint
-        endpoint, = Endpoints.objects.get_or_create(name=endpoint_name, owner=owner)
+        endpoint, _ = Endpoints.objects.get_or_create(name=endpoint_name, owner=owner)
 
         # get model
         database_object, model_created = MLModel.objects.get_or_create(
