@@ -17,10 +17,10 @@ class MLRegistry:
         # get model
         database_object, model_created = MLModel.objects.get_or_create(
             name=model_name,
-            description = model_description,
-            code = model_code,
-            version = model_version,
-            owner = owner,
+            description=model_description,
+            code=model_code,
+            version=model_version,
+            owner=owner,
             parent_endpoint=endpoint
         )
 
