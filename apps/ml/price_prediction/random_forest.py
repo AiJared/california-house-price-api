@@ -2,6 +2,7 @@ from pathlib import Path
 import os
 import joblib
 import pandas as pd
+import numpy as np
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -36,11 +37,8 @@ class RandomForestRegressor:
 
     def compute_prediction(self, input_data):
         try:
-            input_data = self.preprocessing(input_data)
-            prediction = self.predict(input_data)
-            prediction = self.postprocessing(prediction)
-
+            input_data = np.array(input_data).reshape(1, -1)
+            prediction = self.model.predict(input_data)
+            return {"prediction": prediction[0]}
         except Exception as e:
-            return {"status": "Error", "message": str(e)}
-        
-        return prediction
+            return {"error": str(e)}
