@@ -78,7 +78,7 @@ class PredictView(views.APIView):
             )
         
         model_index = 0
-        algorithm_object = registry.endpoints[models[model_index].id]
+        algorithm_object = models[model_index].model
         model_object = algorithm_object['model']
         prediction = model_object.predict(request.data)
 
